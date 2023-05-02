@@ -26,6 +26,7 @@ class NewWordActivity : AppCompatActivity() {
                 replyIntent.putExtra(EXTRA_REPLY, word)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
+            finish()
         }
     }
 

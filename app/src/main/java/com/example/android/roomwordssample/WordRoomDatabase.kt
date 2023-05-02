@@ -22,7 +22,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 /**
@@ -73,9 +72,9 @@ abstract class WordRoomDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(wordDao: WordDao) {
             wordDao.deleteAll()
-            var word = Word(id = 1, word = "Hello")
+            var word = Word(word = "Hello")
             wordDao.insert(word)
-            word = Word(id = 2, word = "World!")
+            word = Word(word = "World!")
             wordDao.insert(word)
         }
     }
